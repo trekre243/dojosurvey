@@ -1,0 +1,63 @@
+@using DojoSurvey.Models
+@model Survey
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h3>Dojo Survey - Form</h3>
+            </div>
+        </div>
+        <form asp-action="Create" asp-controller="DojoSurvey" method="POST">
+            <div class="row">
+                <div class="col s6 offset-s3">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="Name" id="Name">
+                        <label asp-for="Name"></label>
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="input-field col s12">
+                        <p>Dojo Location:</p>
+                        <select class="browser-default" asp-for="Dojo" id="Dojo">
+                            <option value="seattle">Seattle, WA</option>
+                            <option value="mountainview">Mountain View, CA</option>
+                            <option value="boise">Boise, ID</option>
+                            <option value="dallas">Dallas, TX</option>
+                            <option value="richmond">Richmond, VA</option>
+                        </select>
+                        <span asp-validation-for="Dojo"></span>
+                    </div>
+                    <div class="input-field col s12">
+                        <p>Favorite Language:</p>
+                        <select class="browser-default" asp-for="FavoriteLanguage" id="FavoriteLanguage">
+                            <option value="javascript">Javascript</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="csharp">C#</option>
+                            <option value="ruby">Ruby</option>
+                        </select>
+                        <span asp-validation-for="FavoriteLanguage"></span>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea class="materialize-textarea" asp-for="Comment" id="Comment"></textarea>
+                        <label asp-for="Comment"></label>
+                        <span asp-validation-for="Comment"></span>
+                    </div>
+                    <div class="input-field col s12 right-align">
+                        <button class="waves-effect waves-light btn" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

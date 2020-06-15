@@ -1,0 +1,33 @@
+@using DojoSurvey.Models
+@model Survey
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h3>Dojo Survey - Result</h3>
+            </div>
+            <div class="col s6 offset-s3">
+                <h5>Submitted Info</h5>
+                <p>Name: @Model.Name</p>
+                <p>Dojo Location: @Model.Dojo</p>
+                <p>Favorite Language: @Model.FavoriteLanguage</p>
+                <p>Comment: @Model.Comment</p>
+                <div class="right-align">
+                    <a class="waves-effect waves-light btn" href="/">Go Back</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
